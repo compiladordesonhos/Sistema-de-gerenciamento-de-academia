@@ -52,7 +52,7 @@ private:
 public:
 //Construtor:
     
-    Aluno(int idPlano,string nomePlano,string desc,float valorMen, int idAluno, string nome,                                                                                                           string cpf,string e_mail,string tel):Plano(idPlano,nomePlano,desc,valorMen),idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
+    Aluno(int idAluno, string nome,                                                                                                          string cpf,string e_mail,string tel):idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
 
 //Métodos set e get:
 
