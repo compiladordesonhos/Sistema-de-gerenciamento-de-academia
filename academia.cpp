@@ -1,7 +1,7 @@
 #include<iostream>
 
 using namespace std;
-
+//Classe Plano:
 class Plano{
 private:
   int idPlano=0;
