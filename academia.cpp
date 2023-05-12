@@ -52,8 +52,9 @@ private:
 public:
 //Construtor:
     
-    Aluno(int idAluno, string nome,                                                                                                          string cpf,string e_mail,string tel):idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
-
+   
+ Aluno(int idAluno, string nome,string cpf,string e_mail,string tel):idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
+                                                                                                
 //Métodos set e get:
 
 //1.id do aluno:
