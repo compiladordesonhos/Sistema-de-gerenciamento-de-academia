@@ -36,8 +36,8 @@ private:
     string nome="",cpf="",e_mail="",tel="";
 public:
 //Construtor:
-Aluno(int idPlano,string nomePlano,string desc,float valorMen, int idAluno, string nome,                                                                                                              
-      string cpf,string e_mail,string tel):Plano(idPlano,nomePlano,desc,valorMen),idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
+
+    Aluno(int idPlano,string nomePlano,string desc,float valorMen, int idAluno, string nome,                                                                                                               string cpf,string e_mail,string tel):Plano(idPlano,nomePlano,desc,valorMen),idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
 
 //Métodos set e get:
 
@@ -64,4 +64,13 @@ Aluno(int idPlano,string nomePlano,string desc,float valorMen, int idAluno, stri
     
 };    
 //Classe Treino:
-class Treino:public Aluno{};
+class Treino:public Aluno{
+private:
+    int idTreino=0;
+    string des="",datInicio="",datTermino="";
+public:
+   Treino(int idTreino,string des,string datInicio,string datTermino,int idAluno,string nome,string cpf,string e_mail,string tel):Aluno(idAluno,nome,cpf,e_mail,tel),
+          idTreino(idTreino),des(des),datInicio(datInicio),datTermino(datTermino){}
+    
+    
+};
