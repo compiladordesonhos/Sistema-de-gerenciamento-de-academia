@@ -1,19 +1,34 @@
 #include<iostream>
+
 using namespace std;
 
-class Plano(){
+class Plano{
 private:
   int idPlano=0;
   string nomePlano="",desc="";
   float valorMen=0.0f;
 //Construtor:
 public:
-  Plano(int idPlano,string nome,string desc, float valorMen):idPlano(idPlano),nome(nome),desc(desc),valorMen(valorMen){}
+  Plano(int idPlano,string nomePlano,string desc, float valorMen):idPlano(idPlano),nomePlano(nomePlano),desc(desc),valorMen(valorMen){}
+
+//Métodos set e get:
+
+//1.id do plano:
+  void setidPlano(float ip){idPlano=ip;}
+  float getidPlano(){return idPlano;}
+
+//2.Nome do plano:
+  void setnomePlano(string np){nomePlano=np;}
+  string getnomePlano(){return nomePlano;} 
+
+//3.Descrição:
+  void setDescricao(string d){desc=d;}
+  string getDescricao(){return desc;} 
+
+
+//4.Valor mensal:
+  void setValormen(float vm){valorMen=vm;}
+  float getValormen(){return valorMen;}
 };
-class Aluno:public Plano{
-private:
-  int id=0;
-  string nome="",cpf="",e_mail="",tel="";
-public:
-   Aluno(int id,int idPlano,string nome,string desc,float valorMen,string cpf,string e_mail,string tel):Plano(id,nome,desc)id(id),nome(nome),cpf(cpf),e_mail(e_mail)
+
   
