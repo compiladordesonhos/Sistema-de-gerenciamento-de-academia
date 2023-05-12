@@ -32,19 +32,19 @@ public:
 //Classe Aluno:
 class Aluno:public Plano{
 private:
-    int id=0;
+    int idAluno=0;
     string nome="",cpf="",e_mail="",tel="";
 public:
 //Construtor:
 
-    Aluno(int idPlano,string nomePlano,string desc,float valorMen, int id, string nome,
-         string cpf,string e_mail,string tel):Plano(idPlano,nomePlano,desc,valorMen),id(id),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
+    Aluno(int idPlano,string nomePlano,string desc,float valorMen, int idAluno, string nome,                                                                                                              
+          string cpf,string e_mail,string tel):Plano(idPlano,nomePlano,desc,valorMen),idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
 
 //Métodos set e get:
 
 //1.id do aluno:
-    void setId(int i){id=i;}
-    int getid(){return id;}
+    void setId(int id){idAluno=id;}
+    int getid(){return idAluno;}
     
 //2.nome do aluno:
     void setNome(string n){nome=n;}
@@ -61,4 +61,8 @@ public:
 //5.telefone do aluno:
     void setTel(string t){tel=t;}
     string getTel(){return tel;}
+    
+    
 };    
+//Classe Treino:
+class Treino:public Aluno{};
