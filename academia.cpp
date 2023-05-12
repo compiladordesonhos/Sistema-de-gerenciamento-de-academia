@@ -1,60 +1,44 @@
-//Sistema de gerenciamento de academia
-//Grupo:Inacio Meneses,Leonel Davi,Pedro Ryan
-
-#include<iostream>
-
+#include <iostream>
 using namespace std;
 
-//Classe Plano:
-
-class Plano{
-private:
-  int idPlano=0;
-  string nomePlano="",desc="";
-  float valorMen=0.0f;
-
-//Construtor:
+// Classe Plano:
+class Plano {
+protected:
+    int idPlano = 0;
+    string nomePlano = "";
+    string desc = "";
+    float valorMen = 0.0f;
 
 public:
-  Plano(int idPlano,string nomePlano,string desc, float valorMen):idPlano(idPlano),nomePlano(nomePlano),desc(desc),valorMen(valorMen){}
+    // Construtor:
+    Plano(int idPlano, string nomePlano, string desc, float valorMen)
+        : idPlano(idPlano), nomePlano(nomePlano), desc(desc), valorMen(valorMen) {}
 
-//Métodos set e get:
+    // Métodos set e get:
+    void setIdPlano(int id) { idPlano = id; }
+    int getIdPlano() { return idPlano; }
 
-//1.id do plano:
-  
-  void setidPlano(float ip){idPlano=ip;}
-  float getidPlano(){return idPlano;}
+    void setNomePlano(string nome) { nomePlano = nome; }
+    string getNomePlano() { return nomePlano; }
 
-//2.Nome do plano:
- 
-  void setnomePlano(string np){nomePlano=np;}
-  string getnomePlano(){return nomePlano;} 
+    void setDescricao(string descricao) { desc = descricao; }
+    string getDescricao() { return desc; }
 
-//3.Descrição:
-  
-  void setDescricao(string d){desc=d;}
-  string getDescricao(){return desc;} 
-
-
-//4.Valor mensal:
-  
-  void setValormen(float vm){valorMen=vm;}
-  float getValormen(){return valorMen;}
-
+    void setValorMensal(float valor) { valorMen = valor; }
+    float getValorMensal() { return valorMen; }
 };
 
-//Classe Aluno:
+// Classe Aluno:
+class Aluno {
+protected:
+    int idAluno = 0;
+    string nome = "",cpf = "",e_mail = "",tel = "";
+    Plano plano;
 
-class Aluno:public Plano{
-private:
-    int idAluno=0;
-    string nome="",cpf="",e_mail="",tel="";
 public:
-//Construtor:
-    
-   
- Aluno(int idAluno, string nome,string cpf,string e_mail,string tel):idAluno(idAluno),nome(nome),cpf(cpf),e_mail(e_mail),tel(tel){}
-                                                                                                
+    // Construtor:
+    Aluno(int idAluno, string nome, string cpf, string e_mail, string tel, Plano plano):idAluno(idAluno), nome(nome), cpf(cpf), e_mail(e_mail), tel(tel), plano(plano) {}
+ 
 //Métodos set e get:
 
 //1.id do aluno:
@@ -76,17 +60,38 @@ public:
 //5.telefone do aluno:
     void setTel(string t){tel=t;}
     string getTel(){return tel;}
-    
-    
-};    
+//6.plano do aluno:
+    void setPlano(Plano p){plano=p;}
+   
+};
+
 //Classe Treino:
-class Treino:public Aluno{
+class Treino{
 private:
     int idTreino=0;
     string des="",datInicio="",datTermino="";
+    Aluno aluno;
 public:
-   Treino(int idTreino,string des,string datInicio,string datTermino,int idAluno,string nome,string cpf,string e_mail,string tel):Aluno(idAluno,nome,cpf,e_mail,tel),
-          idTreino(idTreino),des(des),datInicio(datInicio),datTermino(datTermino){}
+//Construtor:
+    Treino(int idTreino,string des,string datInicio,string datTermino,Aluno aluno):idTreino(idTreino),des(des),datInicio(datInicio),datTermino(datTermino),aluno(aluno){}
+//Métodos set e get:
+
+//1.descrição do treino:
+    void setDescricao(string d){des=d;}
+    string getDescricao(){return des;}
     
-    
+//2.id do treino:
+    void setidTreino(int idt){idTreino=idt;}
+    int getidTreino(){return idTreino;}
+
+//3.data de início:
+    void setdatInicio(string dI){datInicio=dI;}
+    string getdatInicio(){return datInicio;}
+
+//4.data de término:
+    void setdatTermino(string dT){datTermino=dT;}
+    string getdatTermino(){return datTermino;}
+
+//5.aluno no treino:
+    void setAluno(Aluno a){aluno=a;}
 };
