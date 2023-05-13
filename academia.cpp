@@ -1,3 +1,4 @@
+//Sistema de gerenciamento de academia
 #include <iostream>
 using namespace std;
 
@@ -60,8 +61,7 @@ public:
 //5.telefone do aluno:
     void setTel(string t){tel=t;}
     string getTel(){return tel;}
-//6.plano do aluno:
-    void setPlano(Plano p){plano=p;}
+
    
 };
 
@@ -73,7 +73,7 @@ private:
     Aluno aluno;
 public:
 //Construtor:
-    Treino(int idTreino,string des,string datInicio,string datTermino,Aluno aluno):idTreino(idTreino),des(des),datInicio(datInicio),datTermino(datTermino),aluno(aluno){}
+    Treino(int idTreino,Aluno aluno,string datInicio,string datTermino,string des):idTreino(idTreino),des(des),datInicio(datInicio),datTermino(datTermino),aluno(aluno){}
 //Métodos set e get:
 
 //1.descrição do treino:
@@ -92,6 +92,22 @@ public:
     void setdatTermino(string dT){datTermino=dT;}
     string getdatTermino(){return datTermino;}
 
-//5.aluno no treino:
-    void setAluno(Aluno a){aluno=a;}
+
+
 };
+
+//Função principal:
+int main(){
+//Planos:
+    Plano p1={1,"Plano Mensal","Acesso livre à academia por 30 dias",150.00};
+    Plano p2={2,"Plano Anual","Acesso livre à academia por 365 dias",1200.00};
+    Plano p3={3,"Plano Trimestral","Acesso Livre à academia por 90 dias",360.00};
+//Alunos:
+    Aluno a1={1,"Ana Maria","111.111.111-11","ana.maria@gmail.com","(11)99999-9999",p1};
+    Aluno a2={2,"João Silva","222.222.222-22","joão.silva@hotmail.com","(21)88888-8888",p2};
+    Aluno a3={3,"Pedro Alves","333.333.333-33","pedro.alves@outlook.com","(31)77777-7777",p3};
+//Treinos:
+    Treino t1={1,a1,"2023-05-01","2023-06-01","Treino para perda de peso"};
+    Treino t2={2,a2,"2023-06-01","2024-06-01","Treino para ganho de massa muscular"};
+    Treino t3={3,a3,"2023-07-01","2023-10-01","Treino para definição muscular"};
+}  
